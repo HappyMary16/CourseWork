@@ -13,7 +13,7 @@ import org.jzy3d.maths.Coord3d;
 import org.jzy3d.plot3d.primitives.ConcurrentLineStrip;
 import org.jzy3d.plot3d.rendering.canvas.Quality;
 import org.jzy3d.plot3d.text.drawable.DrawableTextBitmap;
-import ua.com.courseWork.controller.DataStorage;
+import ua.com.courseWork.database.DataStorage;
 import ua.com.courseWork.model.Edge;
 import ua.com.courseWork.model.Point;
 
@@ -22,8 +22,8 @@ public class DrawRod {
     public static List<ConcurrentLineStrip> setLines(DataStorage storage) {
         List<ConcurrentLineStrip> lines = new LinkedList<>();
 
-        for (int i = 0; i < storage.numberEdges(); i++) {
-            Edge edge = storage.getEdge(i);
+        for (Edge edge :
+                storage.getEdges()) {
             List<Coord3d> coord3ds = new LinkedList<>();
 
             Point p = edge.getFrom();

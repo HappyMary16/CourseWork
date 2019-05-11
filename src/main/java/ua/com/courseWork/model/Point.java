@@ -21,4 +21,9 @@ public class Point extends Entity {
 
     private double temperature;
 
+    public Point(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
 }

@@ -14,6 +14,11 @@ public class EdgeData extends Entity {
     private Long fromId;
 
     private Long toId;
+
+    public EdgeData(Edge edge) {
+        fromId = edge.getFrom().getId();
+        toId = edge.getTo().getId();
+    }
 }
 
 

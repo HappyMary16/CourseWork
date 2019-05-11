@@ -1,7 +1,8 @@
-package ua.com.courseWork.controller;
+package ua.com.courseWork.database;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import ua.com.courseWork.controller.NumberToColor;
 import ua.com.courseWork.model.Edge;
 import ua.com.courseWork.model.EdgeData;
 import ua.com.courseWork.model.Point;
@@ -23,20 +24,23 @@ public class DataStorage {
 
     private NumberToColor numberToColor = null;
 
+    private long lastPointId;
+
+    private long lastEdgeId;
+
     public void setPointMap(String fileName) throws IOException {
 
         FileReader in = new FileReader(fileName);
         BufferedReader br = new BufferedReader(in);
-        pointMap = new HashMap<>();
+        pointMap = new TreeMap<>();
         String str;
-        long id = 0;
 
         while ((str = br.readLine()) != null) {
             String[] dataArr = str.split(" +");
             Point point = new Point();
 
             if (dataArr.length == 3) {
-                point.setId(id++);
+                point.setId(lastPointId++);
                 point.setX(Double.parseDouble(dataArr[0]));
                 point.setY(Double.parseDouble(dataArr[1]));
                 point.setZ(Double.parseDouble(dataArr[2]));
@@ -52,16 +56,15 @@ public class DataStorage {
 
         FileReader in = new FileReader(fileName);
         BufferedReader br = new BufferedReader(in);
-        edgeDataMap = new HashMap<>();
+        edgeDataMap = new TreeMap<>();
         String str;
-        long id = 0;
 
         while ((str = br.readLine()) != null) {
             String[] dataArr = str.split(" +");
             EdgeData edgeData = new EdgeData();
 
             if (dataArr.length == 2) {
-                edgeData.setId(id++);
+                edgeData.setId(lastEdgeId++);
                 edgeData.setFromId(Long.valueOf(dataArr[0]));
                 edgeData.setToId(Long.valueOf(dataArr[1]));
             } else {
@@ -77,7 +80,7 @@ public class DataStorage {
         FileReader in = new FileReader(fileName);
         BufferedReader br = new BufferedReader(in);
 
-        temperature = new HashMap<>();
+        temperature = new TreeMap<>();
         String str;
 
         while ((str = br.readLine()) != null) {
@@ -103,11 +106,15 @@ public class DataStorage {
     }
 
     public Point getPoint(long id) {
-
         if (pointMap == null || !pointMap.containsKey(id)) {
             throw new IllegalArgumentException();
         }
         return pointMap.get(id);
+    }
+
+    public void addPoint(Point point) {
+        point.setId(lastPointId++);
+        pointMap.put(point.getId(), point);
     }
 
     public Edge getEdge(long id) {
@@ -118,9 +125,23 @@ public class DataStorage {
     }
 
     public List<Edge> getEdges() {
+        return getEdgesFrom(0);
+    }
+
+    public List<Edge> getEdgesFrom(long id) {
         List<Edge> edges = new LinkedList<>();
-        edgeDataMap.values().stream().forEach(e -> edges.add(new Edge(e, this)));
+        edgeDataMap.values().stream().skip(id).forEach(e -> edges.add(new Edge(e, this)));
         return edges;
+    }
+
+    public Long addEdge(EdgeData edgeData) {
+        edgeData.setId(lastEdgeId++);
+        edgeDataMap.put(edgeData.getId(), edgeData);
+        return edgeData.getId();
+    }
+
+    public Edge removeEdge(Long id) {
+        return new Edge(edgeDataMap.remove(id), this);
     }
 
     public int numberPoints() {
@@ -137,5 +158,17 @@ public class DataStorage {
 
     public double getMinTemperature() {
         return temperature.values().stream().min(Comparator.naturalOrder()).get();
+    }
+
+    public long getLastPointId() {
+        return lastPointId;
+    }
+
+    public long getLastEdgeId() {
+        return lastEdgeId;
+    }
+
+    public void addTemperature(long id, double pointTemperature) {
+        temperature.put(id, pointTemperature);
     }
 }

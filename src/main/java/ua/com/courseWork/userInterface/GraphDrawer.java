@@ -10,7 +10,7 @@ import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.chart.plot.PlotOrientation;
-import ua.com.courseWork.MSE;
+import ua.com.courseWork.controller.MSE;
 
 import java.io.File;
 import java.io.IOException;

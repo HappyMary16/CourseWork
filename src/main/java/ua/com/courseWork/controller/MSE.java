@@ -1,4 +1,4 @@
-package ua.com.courseWork;
+package ua.com.courseWork.controller;
 
 import java.util.ArrayList;
 import java.util.List;

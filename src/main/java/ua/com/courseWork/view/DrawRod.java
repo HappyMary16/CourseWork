@@ -81,7 +81,7 @@ public class DrawRod {
                         new Coord3d(0, 0, 30), Color.BLACK);
                 System.out.println(temperature);
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

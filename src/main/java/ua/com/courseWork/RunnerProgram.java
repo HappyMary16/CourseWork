@@ -18,8 +18,8 @@ public class RunnerProgram {
         DataStorage dataStorage = new DataStorage();
         try {
             dataStorage.setPointMap("src/points");
-            dataStorage.setEdgeDataMap("src/edges");
-            dataStorage.setTemperature("src/temperatures");
+            dataStorage.setEdgeDataMap("src/edges.txt");
+            dataStorage.setTemperature("src/temperatures.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,8 +43,6 @@ public class RunnerProgram {
                     splittedEdge.getFirst().getFrom().getTemperature(),
                     splittedEdge.getLast().getTo().getTemperature());
 
-            System.out.println(splittedEdge.getFirst().getFrom().getTemperature() + "  " + splittedEdge.getLast().getTo().getTemperature());
-            System.out.println(Arrays.toString(temperatures));
             splittedEdge.removeFirst();
             Arrays.stream(temperatures).forEach((t) -> splittedEdge.removeFirst().getFrom().setTemperature(t));
         }

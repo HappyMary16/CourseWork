@@ -119,7 +119,7 @@
                 <!--<configuration>-->
                     <!--<archive>-->
                         <!--<manifest>-->
-                            <!--<mainClass>ua.com.courseWork.Main</mainClass>-->
+                            <!--<mainClass>ua.com.courseWork.OldMainain</mainClass>-->
                         <!--</manifest>-->
                     <!--</archive>-->
                 <!--</configuration>-->

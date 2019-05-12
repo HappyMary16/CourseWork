@@ -1,24 +1,22 @@
 package ua.com.courseWork;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import org.jfree.ui.RefineryUtilities;
-import ua.com.courseWork.userInterface.UserInterface;
+public class Main extends Application {
 
-import javax.swing.*;
-import java.awt.*;
-
-public class Main {
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("/MainWindow.fxml"));
+        primaryStage.setTitle("MSE");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
-
-        JFrame frame = new JFrame("Finite element method");
-        frame.setContentPane(new UserInterface().getPanel());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        frame.setMinimumSize(new Dimension(750, 550));
-
-        frame.pack();
-        RefineryUtilities.centerFrameOnScreen(frame);
-        frame.setVisible(true);
+        launch(args);
     }
 }

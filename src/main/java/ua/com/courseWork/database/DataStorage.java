@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import ua.com.courseWork.controller.NumberToColor;
 import ua.com.courseWork.model.Edge;
 import ua.com.courseWork.model.EdgeData;
-import ua.com.courseWork.model.Point;
+import ua.com.courseWork.model.Node;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,7 +16,7 @@ import java.util.*;
 @AllArgsConstructor
 public class DataStorage {
 
-    private Map<Long, Point> pointMap = null;
+    private Map<Long, Node> pointMap = null;
 
     private Map<Long, EdgeData> edgeDataMap = null;
 
@@ -28,7 +28,7 @@ public class DataStorage {
 
     private long lastEdgeId;
 
-    public void setPointMap(String fileName) throws IOException {
+    public void setNodeMap(String fileName) throws IOException {
 
         FileReader in = new FileReader(fileName);
         BufferedReader br = new BufferedReader(in);
@@ -37,18 +37,18 @@ public class DataStorage {
 
         while ((str = br.readLine()) != null) {
             String[] dataArr = str.split(" +");
-            Point point = new Point();
+            Node node = new Node();
 
             if (dataArr.length == 3) {
-                point.setId(lastPointId++);
-                point.setX(Double.parseDouble(dataArr[0]));
-                point.setY(Double.parseDouble(dataArr[1]));
-                point.setZ(Double.parseDouble(dataArr[2]));
+                node.setId(lastPointId++);
+                node.setX(Double.parseDouble(dataArr[0]));
+                node.setY(Double.parseDouble(dataArr[1]));
+                node.setZ(Double.parseDouble(dataArr[2]));
             } else {
                 throw new IllegalStateException("File should have 3 number in each line!");
             }
 
-            pointMap.put(point.getId(), point);
+            pointMap.put(node.getId(), node);
         }
     }
 
@@ -105,16 +105,16 @@ public class DataStorage {
         return numberToColor;
     }
 
-    public Point getPoint(long id) {
+    public Node getPoint(long id) {
         if (pointMap == null || !pointMap.containsKey(id)) {
             throw new IllegalArgumentException();
         }
         return pointMap.get(id);
     }
 
-    public void addPoint(Point point) {
-        point.setId(lastPointId++);
-        pointMap.put(point.getId(), point);
+    public void addPoint(Node node) {
+        node.setId(lastPointId++);
+        pointMap.put(node.getId(), node);
     }
 
     public Edge getEdge(long id) {
@@ -153,11 +153,11 @@ public class DataStorage {
     }
 
     public double getMaxTemperature() {
-        return temperature.values().stream().max(Comparator.naturalOrder()).get();
+        return temperature.values().stream().max(Comparator.naturalOrder()).orElse(0.);
     }
 
     public double getMinTemperature() {
-        return temperature.values().stream().min(Comparator.naturalOrder()).get();
+        return temperature.values().stream().min(Comparator.naturalOrder()).orElse(0.);
     }
 
     public long getLastPointId() {

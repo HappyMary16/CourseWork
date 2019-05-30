@@ -3,57 +3,162 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="217.0" y="211.0">ua.com.courseWork.userInterface.GraphDrawer</node>
-    <node x="248.0" y="0.0">ua.com.courseWork.Example</node>
-    <node x="860.0" y="277.5">ua.com.courseWork.userInterface.DrawResult</node>
-    <node x="471.25" y="1219.0">ua.com.courseWork.Main</node>
-    <node x="688.0" y="277.5">ua.com.courseWork.userInterface.IncorrectData</node>
-    <node x="380.25" y="478.0">ua.com.courseWork.userInterface.UserInterface</node>
-    <node x="0.0" y="255.0">ua.com.courseWork.userInterface.NotFatalIncorrectData</node>
+    <node x="329.87285353535356" y="0.0">ua.com.courseWork.model.Entity</node>
+    <node x="230.69258021390377" y="390.0">ua.com.courseWork.view.DrawRod</node>
+    <node x="0.0" y="390.0">ua.com.courseWork.controller.MSE</node>
+    <node x="-25.0" y="304.0">ua.com.courseWork.Main</node>
+    <node x="427.5410650623886" y="200.0">ua.com.courseWork.model.SplitType</node>
+    <node x="329.5410650623886" y="80.0">ua.com.courseWork.model.Node</node>
+    <node x="129.8062165775401" y="500.0">ua.com.courseWork.controller.ViewController</node>
+    <node x="209.5410650623886" y="80.0">ua.com.courseWork.model.EdgeData</node>
+    <node x="56.54106506238861" y="80.0">ua.com.courseWork.controller.NumberToColor</node>
+    <node x="271.19258021390374" y="310.0">ua.com.courseWork.model.Edge</node>
+    <node x="146.83093434343436" y="200.0">ua.com.courseWork.database.DataStorage</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="ua.com.courseWork.userInterface.GraphDrawer" target="ua.com.courseWork.Example">
-      <point x="0.0" y="-103.5" />
-      <point x="0.0" y="80.5" />
+    <edge source="ua.com.courseWork.model.Edge" target="ua.com.courseWork.model.Node">
+      <point x="13.636363636363654" y="-15.0" />
+      <point x="322.3289438502674" y="260.0" />
+      <point x="379.0410650623886" y="260.0" />
+      <point x="11.0" y="15.0" />
     </edge>
-    <edge source="ua.com.courseWork.userInterface.UserInterface" target="ua.com.courseWork.userInterface.IncorrectData">
-      <point x="50.0" y="-345.5" />
-      <point x="605.25" y="438.0" />
-      <point x="726.0" y="438.0" />
-      <point x="-38.0" y="37.0" />
+    <edge source="ua.com.courseWork.model.Edge" target="ua.com.courseWork.model.Entity">
+      <point x="27.27272727272728" y="-15.0" />
+      <point x="335.96530748663105" y="280.0" />
+      <point x="417.0410650623886" y="280.0" />
+      <point x="417.0410650623886" y="55.0" />
+      <point x="394.0395202020202" y="55.0" />
+      <point x="25.666666666666657" y="15.0" />
     </edge>
-    <edge source="ua.com.courseWork.userInterface.UserInterface" target="ua.com.courseWork.userInterface.DrawResult">
-      <point x="150.0" y="-345.5" />
-      <point x="705.25" y="458.0" />
-      <point x="1091.0" y="458.0" />
-      <point x="0.0" y="37.0" />
+    <edge source="ua.com.courseWork.model.EdgeData" target="ua.com.courseWork.model.Entity">
+      <point x="-2.8421709430404007E-14" y="-15.0" />
+      <point x="259.5410650623886" y="55.0" />
+      <point x="342.70618686868687" y="55.0" />
+      <point x="-25.666666666666657" y="15.0" />
     </edge>
-    <edge source="ua.com.courseWork.userInterface.UserInterface" target="ua.com.courseWork.userInterface.NotFatalIncorrectData">
-      <point x="-150.0" y="-345.5" />
-      <point x="405.25" y="458.0" />
-      <point x="49.25" y="458.0" />
-      <point x="-49.25" y="59.5" />
+    <edge source="ua.com.courseWork.view.DrawRod" target="ua.com.courseWork.model.Edge">
+      <point x="-7.105427357601002E-15" y="-15.0" />
+      <point x="279.19258021390374" y="370.0" />
+      <point x="289.94258021390374" y="370.0" />
+      <point x="-18.75" y="15.0" />
     </edge>
-    <edge source="ua.com.courseWork.Main" target="ua.com.courseWork.userInterface.UserInterface">
-      <point x="0.0" y="-25.5" />
-      <point x="0.0" y="345.5" />
+    <edge source="ua.com.courseWork.view.DrawRod" target="ua.com.courseWork.model.Node">
+      <point x="32.33333333333334" y="-15.0" />
+      <point x="311.5259135472371" y="370.0" />
+      <point x="396.8592468805704" y="370.0" />
+      <point x="396.8592468805704" y="180.0" />
+      <point x="401.0410650623886" y="180.0" />
+      <point x="32.999999999999986" y="15.0" />
     </edge>
-    <edge source="ua.com.courseWork.userInterface.UserInterface" target="ua.com.courseWork.userInterface.GraphDrawer">
-      <point x="0.0" y="-345.5" />
-      <point x="112.75" y="103.5" />
+    <edge source="ua.com.courseWork.controller.ViewController" target="ua.com.courseWork.database.DataStorage">
+      <point x="-7.875" y="-15.0" />
+      <point x="184.9312165775401" y="450.0" />
+      <point x="160.03926767676768" y="450.0" />
+      <point x="160.03926767676768" y="290.0" />
+      <point x="156.41426767676768" y="290.0" />
+      <point x="-47.916666666666686" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.controller.ViewController" target="ua.com.courseWork.view.DrawRod">
+      <point x="23.625" y="-15.0" />
+      <point x="216.4312165775401" y="460.0" />
+      <point x="279.19258021390374" y="460.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.controller.ViewController" target="ua.com.courseWork.model.Edge">
+      <point x="39.375" y="-15.0" />
+      <point x="232.1812165775401" y="470.0" />
+      <point x="338.19258021390374" y="470.0" />
+      <point x="338.19258021390374" y="360.0" />
+      <point x="327.44258021390374" y="360.0" />
+      <point x="18.75" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.database.DataStorage" target="ua.com.courseWork.controller.NumberToColor">
+      <point x="-25.555555555555543" y="-15.0" />
+      <point x="178.77537878787882" y="180.0" />
+      <point x="176.2410650623886" y="180.0" />
+      <point x="53.19999999999999" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.model.Node" target="ua.com.courseWork.model.Entity">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.model.Edge" target="ua.com.courseWork.model.EdgeData">
+      <point x="-13.636363636363654" y="-15.0" />
+      <point x="295.0562165775401" y="260.0" />
+      <point x="285.1920454545455" y="260.0" />
+      <point x="285.1920454545455" y="150.0" />
+      <point x="267.874398395722" y="150.0" />
+      <point x="8.333333333333343" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.model.EdgeData" target="ua.com.courseWork.model.Edge">
+      <point x="25.0" y="15.0" />
+      <point x="284.5410650623886" y="140.0" />
+      <point x="301.874398395722" y="140.0" />
+      <point x="-6.818181818181813" y="-15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.view.DrawRod" target="ua.com.courseWork.database.DataStorage">
+      <point x="-32.33333333333334" y="-15.0" />
+      <point x="246.85924688057042" y="370.0" />
+      <point x="194.747601010101" y="370.0" />
+      <point x="-9.583333333333343" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.controller.ViewController" target="ua.com.courseWork.model.SplitType">
+      <point x="55.125" y="-15.0" />
+      <point x="247.9312165775401" y="480.0" />
+      <point x="500.2910650623886" y="480.0" />
+      <point x="24.25" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.database.DataStorage" target="ua.com.courseWork.model.EdgeData">
+      <point x="12.777777777777771" y="-15.0" />
+      <point x="217.10871212121214" y="150.0" />
+      <point x="251.2077317290553" y="150.0" />
+      <point x="-8.333333333333343" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.database.DataStorage" target="ua.com.courseWork.model.Node">
+      <point x="25.555555555555543" y="-15.0" />
+      <point x="229.8864898989899" y="160.0" />
+      <point x="335.0410650623886" y="160.0" />
+      <point x="-33.0" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.controller.ViewController" target="ua.com.courseWork.controller.MSE">
+      <point x="-55.125" y="-15.0" />
+      <point x="137.6812165775401" y="480.0" />
+      <point x="35.5" y="480.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.controller.ViewController" target="ua.com.courseWork.controller.NumberToColor">
+      <point x="-39.375" y="-15.0" />
+      <point x="153.4312165775401" y="470.0" />
+      <point x="81.50000000000003" y="470.0" />
+      <point x="81.50000000000003" y="180.0" />
+      <point x="69.84106506238862" y="180.0" />
+      <point x="-53.19999999999999" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.model.Edge" target="ua.com.courseWork.model.SplitType">
+      <point x="34.09090909090909" y="-15.0" />
+      <point x="342.78348930481286" y="290.0" />
+      <point x="451.7910650623886" y="290.0" />
+      <point x="-24.25" y="15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.database.DataStorage" target="ua.com.courseWork.model.Edge">
+      <point x="28.75" y="15.0" />
+      <point x="233.08093434343436" y="280.0" />
+      <point x="281.4198529411765" y="280.0" />
+      <point x="-27.27272727272728" y="-15.0" />
+    </edge>
+    <edge source="ua.com.courseWork.model.Edge" target="ua.com.courseWork.database.DataStorage">
+      <point x="-34.09090909090909" y="-15.0" />
+      <point x="274.6016711229947" y="290.0" />
+      <point x="213.91426767676768" y="290.0" />
+      <point x="9.583333333333314" y="15.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.2489402697495182" x="358.6850661338627" y="450.64467650655445" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="262.5" y="302.5" />
   <SelectedNodes>
-    <node>ua.com.courseWork.userInterface.UserInterface</node>
+    <node>ua.com.courseWork.Main</node>
   </SelectedNodes>
-  <Categories>
-    <Category>Constructors</Category>
-    <Category>Methods</Category>
-    <Category>Properties</Category>
-    <Category>Inner Classes</Category>
-  </Categories>
+  <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>

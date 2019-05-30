@@ -15,9 +15,9 @@ public class Edge extends Entity{
 
     private static final long serialVersionUID = -1118000839097499331L;
 
-    private Point from;
+    private Node from;
 
-    private Point to;
+    private Node to;
 
     private double length;
 
@@ -31,7 +31,7 @@ public class Edge extends Entity{
                 .getColor((this.from.getTemperature() + this.to.getTemperature()) / 2);
     }
 
-    public Edge(Point from, Point to) {
+    public Edge(Node from, Node to) {
         this.from = from;
         this.to = to;
         this.length = Math.pow( Math.pow(this.from.getX() - this.to.getX(), 2)
@@ -62,7 +62,7 @@ public class Edge extends Entity{
     }
 
     private static Pair<Edge, Edge> split(Edge edge, DataStorage storage) {
-        Point point = new Point(
+        Node point = new Node(
                 (edge.from.getX() + edge.to.getX()) / 2,
                 (edge.from.getY() + edge.to.getY()) / 2,
                 (edge.from.getZ() + edge.to.getZ()) / 2);

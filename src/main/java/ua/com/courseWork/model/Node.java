@@ -9,7 +9,7 @@ import java.awt.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Point extends Entity {
+public class Node extends Entity {
 
     private static final long serialVersionUID = -6244976905366614391L;
 
@@ -21,7 +21,7 @@ public class Point extends Entity {
 
     private double temperature;
 
-    public Point(double x, double y, double z) {
+    public Node(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
